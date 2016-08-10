@@ -15,7 +15,7 @@ public class Circle {
     private String color;
 
     public Circle() {
-        radius = 1.0;
+        radius = 1.5;
         color = "red";
     }
 
