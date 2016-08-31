@@ -13,13 +13,15 @@ package lab3;
  *
  * @author Plankton
  */
+
+class User {
+    String name;
+    String password;
+}
+
 public class Lab3 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
-    
 }
