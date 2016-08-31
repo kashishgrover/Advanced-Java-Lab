@@ -15,6 +15,9 @@
 
  The above program has to be implemented to keep track of students, faculties and the 
  administrators in a college. The privileges given for each type of user should vary based on their designation.
+
+To run this application from the command line without Ant, try:
+java -jar "C:\Users\Plankton\Desktop\Advanced-Java-Lab\Lab2\dist\Lab2.jar"
  */
 package lab2;
 
@@ -36,9 +39,6 @@ public class Lab2 {
 
     static ResultSet rs;
     static Statement stmt;
-
-    static String username;
-    static String password;
     
     static String user, pass, name = "", role = "";
     static int age = 0;
@@ -121,7 +121,7 @@ public class Lab2 {
                     int flag = 0;
                     while (rs2.next()) {
                         name = rs2.getString("name");
-                        String pwd = rs2.getString("password");
+                        String pwd = rs2.getString("pass");
                         if (name.equals(user) && passw.equals(pwd)) {
                             flag = 1;
                             age = rs2.getInt("age");
