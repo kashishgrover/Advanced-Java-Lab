@@ -9,19 +9,67 @@
  */
 package lab3;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Plankton
  */
-
 class User {
+
     String name;
+    String username;
     String password;
+    double balance;
+
+    User(String name, String username, String password, double balance) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.balance = balance;
+    }
+    
+    void addMoney() {
+        
+    }
+    
+    void withdrawMoney() {
+        
+    }            
 }
 
 public class Lab3 {
 
+    static Scanner sc = new Scanner(System.in);
+    static int choice = 0;
+    static User U;
+    static String name;
+    static double salary;
+    static double meow;
+
     public static void main(String[] args) {
-        
+        while (true) {
+            System.out.println("MENU");
+            System.out.println("1. Login");
+            System.out.println("2. Register");
+            System.out.println("3. Exit");
+            System.out.print("Enter Choice: ");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1: {
+                    
+                    break;
+                }
+                case 2: {
+                    System.out.println("Enter Name - ");
+                    System.out.println("Enter Username - ");
+                    System.out.println("Enter Password - ");
+                    //U = new User();
+                    break;
+                }
+                case 3:
+                    System.exit(0);
+            }
+        }
     }
 }
