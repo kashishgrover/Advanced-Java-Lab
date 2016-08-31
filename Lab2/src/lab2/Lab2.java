@@ -4,7 +4,7 @@
  The application will ask the user to input username and password and to check
  the existence of this user in the database. 
 
- The username should consist of at least one symbol and one number.  
+ The password should consist of at least one symbol and one number.  
 
  While entering  the password, it should be masked with * or . symbol.
 
@@ -130,7 +130,7 @@ public class Lab2 {
                         }
                     }
                     if (flag == 0) {
-                        System.out.println("Invalid Login!");
+                        System.out.println("Sorry! You are not registered!");
                         System.exit(0);
                     } else {
                         System.out.println("User found!");
@@ -139,10 +139,10 @@ public class Lab2 {
                         System.out.println("Role: " + role);
                         switch (role) {
                             case "Admin":
-                                System.out.println("You can:\n1)View Table.\n2)Enter record.\n");
+                                System.out.println("You can do following:\n\n1)View Table.\n2)Enter record.\n");
                                 break;
                             case "Student":
-                                System.out.println("You can:\n1)View Table.\n");
+                                System.out.println("You can do the following:\n\n1)View Table.\n");
                                 break;
                         }
                     }
