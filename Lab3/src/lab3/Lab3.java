@@ -28,16 +28,20 @@ public class Lab3 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        
         final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
         final String DB_URL = "jdbc:mysql://localhost:3306/Banking";
         final String USER = "kashish";
         final String PASS = "Zildjian1";
+        
         String user, pass, name = "", role = "";
         int id = 0;
         int balance = 0;
         char app = 0;
+        
         Connection conn = null;
         Statement stmt = null;
+        
         PreparedStatement stmt_app_reject = null;
         PreparedStatement stmt_app_approve = null;
         PreparedStatement make_trans = null;
@@ -46,7 +50,8 @@ public class Lab3 {
         PreparedStatement view_trans = null;
         PreparedStatement pstmt = null;
 
-        try {
+        try 
+        {
             Class.forName("com.mysql.jdbc.Driver");
             conn = (Connection) DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = (Statement) conn.createStatement();
