@@ -31,8 +31,8 @@ public class Lab3 {
         
         final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
         final String DB_URL = "jdbc:mysql://localhost:3306/Banking";
-        final String USER = "kashish";
-        final String PASS = "Zildjian1";
+        final String USER = "root";
+        final String PASS = "student";
         
         String user, pass, name = "", role = "";
         int id = 0;
@@ -216,6 +216,5 @@ public class Lab3 {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("\nThankyou for using this software!");
     }
 }
