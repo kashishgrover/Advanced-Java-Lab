@@ -61,7 +61,7 @@ public class Lab3 {
             make_trans = (PreparedStatement) conn.prepareStatement("insert into transaction values(?,?,?,?)");
             update_payee = (PreparedStatement) conn.prepareStatement("update user set balance=balance+? where id=?;");
             update_payer = (PreparedStatement) conn.prepareStatement("update user set balance=balance-? where id=?;");
-            view_trans = (PreparedStatement) conn.prepareStatement("select * from transaction where tdate between ? and ? and uid=?;");
+            view_trans = (PreparedStatement) conn.prepareStatement("select * from transaction where date between ? and ? and uid=?;");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -184,7 +184,7 @@ public class Lab3 {
                                 update_payer.setInt(1, amt);
                                 update_payer.setInt(2, id);
                                 update_payer.execute();
-                                System.out.println("Trnasaction made!");
+                                System.out.println("Transaction made!");
                                 break;
                             case 2:
                                 System.out.println("Enter beginning date: ");
@@ -198,7 +198,7 @@ public class Lab3 {
                                 view_trans.setInt(3, id);
                                 ResultSet rss = view_trans.executeQuery();
                                 while (rss.next()) {
-                                    System.out.println("T_ID: " + rss.getInt("tid") + ", U_ID: " + rss.getInt("uid") + ", amount: " + rss.getInt("amount") + ", date: " + rss.getDate("tdate") + "\n");
+                                    System.out.println("T_ID: " + rss.getInt("tid") + ", U_ID: " + rss.getInt("uid") + ", amount: " + rss.getInt("amount") + ", date: " + rss.getDate("date") + "\n");
                                 }
                                 break;
                         }
