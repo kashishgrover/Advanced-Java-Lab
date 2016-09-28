@@ -38,6 +38,8 @@ public class Server extends Thread {
 
                     System.out.print("Server: ");
                     message = sc.nextLine();
+                    if(message.equals("stop"))
+                        server.close();
                     OutputStream outToServer = server.getOutputStream();
                     DataOutputStream out = new DataOutputStream(outToServer);
                     out.writeUTF(message);

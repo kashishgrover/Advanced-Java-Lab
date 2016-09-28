@@ -21,6 +21,8 @@ public class Client {
             do {
                 System.out.print("Client: ");
                 message = sc.nextLine();
+                if(message.equals("stop"))
+                    client.close();
                 OutputStream outToServer = client.getOutputStream();
                 DataOutputStream out = new DataOutputStream(outToServer);
                 out.writeUTF(message);
