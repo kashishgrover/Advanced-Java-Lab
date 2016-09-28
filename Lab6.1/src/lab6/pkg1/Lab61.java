@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Write a program to demonstrate use of URL Connection class and Inet Address 
+ * class for communication.
  */
 package lab6.pkg1;
 
