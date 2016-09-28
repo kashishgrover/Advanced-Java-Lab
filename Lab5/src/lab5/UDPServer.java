@@ -1,10 +1,6 @@
 package lab5;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.*;
 import java.util.Scanner;
 
@@ -12,7 +8,7 @@ public class UDPServer extends Thread {
 
     static Scanner sc = new Scanner(System.in);
 
-    private DatagramSocket serverSocket;
+    private final DatagramSocket serverSocket;
 
     public UDPServer(int port) throws IOException {
         serverSocket = new DatagramSocket(port);
