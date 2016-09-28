@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package lab6;
+package StringRMI;
 
-import java.net.*;
+import java.net.MalformedURLException;
 import java.rmi.*;
 
 /**
@@ -17,7 +12,7 @@ public class Server {
         try {
             ServerImplementation server = new ServerImplementation();
             Naming.rebind("CalculatorServer", server);
-        } catch (Exception e) {
+        } catch (RemoteException | MalformedURLException e) {
             System.out.println("Exception: " + e);
         }
     }
