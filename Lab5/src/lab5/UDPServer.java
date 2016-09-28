@@ -17,7 +17,7 @@ public class UDPServer extends Thread {
 
     @Override
     public void run() {
-        byte[] data = new byte[1024];
+        byte[] data = new byte[10240];
         String sentence;
         while (true) {
             try {
@@ -25,6 +25,8 @@ public class UDPServer extends Thread {
                     DatagramPacket receivePacket = new DatagramPacket(data, data.length);
                     serverSocket.receive(receivePacket);                    
                     sentence = new String(receivePacket.getData());
+                    if(sentence.equals("stop"))
+                        serverSocket.disconnect();
                     System.out.println("Client: " + sentence);
                     
                     InetAddress IPAddress = receivePacket.getAddress();
@@ -32,6 +34,8 @@ public class UDPServer extends Thread {
                     
                     System.out.print("Server: ");
                     sentence = sc.nextLine();
+                    if(sentence.equals("stop"))
+                        serverSocket.disconnect();
                     data = sentence.getBytes();                    
                     DatagramPacket sendPacket = new DatagramPacket(data, data.length, IPAddress, port);
                     serverSocket.send(sendPacket);      

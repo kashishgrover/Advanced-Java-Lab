@@ -7,7 +7,7 @@ public class UDPClient {
 
     static Scanner sc = new Scanner(System.in);
 
-    static byte[] data = new byte[1024];
+    static byte[] data = new byte[10240];
 
     static String sentence;
 
@@ -18,6 +18,12 @@ public class UDPClient {
 
                 System.out.print("Client: ");
                 sentence = sc.nextLine();
+                if(sentence.equals("stop"))
+                {
+                    clientSocket.disconnect();
+                    clientSocket.close();
+                    break;
+                }
                 data = sentence.getBytes();
                 DatagramPacket sendPacket = new DatagramPacket(data, data.length, IPAddress, 1234);
                 clientSocket.send(sendPacket);
@@ -25,6 +31,8 @@ public class UDPClient {
                 DatagramPacket receivePacket = new DatagramPacket(data, data.length);
                 clientSocket.receive(receivePacket);
                 sentence = new String(receivePacket.getData());
+                if(sentence.equals("stop"))
+                    clientSocket.disconnect();
                 System.out.println("Server: " + sentence);
             } while (!"stop".equals(sentence));
         }
