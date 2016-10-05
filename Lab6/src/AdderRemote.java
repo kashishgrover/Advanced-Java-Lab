@@ -1,12 +1,8 @@
-
 import java.rmi.*;
 import java.rmi.server.*;
 
 public class AdderRemote extends UnicastRemoteObject implements Adder {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
 
     AdderRemote() throws RemoteException {

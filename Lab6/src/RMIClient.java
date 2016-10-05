@@ -4,12 +4,11 @@ import java.rmi.*;
 import java.util.Scanner;
 
 public class RMIClient {
-
     public static void main(String args[]) {
         try {
             Adder stub = (Adder) Naming.lookup("rmi://localhost:1234/calc");
             System.out.println("What would you like to do?\n1) Add\n2) Subtract"
-                    + "\n3) Multiply\n4) Divide\n5)String Compare\n6) String reverse\n");
+                    + "\n3) Multiply\n4) Divide\n5) String Compare\n6) String reverse\n");
             try (Scanner sc = new Scanner(System.in)) {
                 int ch = sc.nextInt();
                 double x, y, ans;
