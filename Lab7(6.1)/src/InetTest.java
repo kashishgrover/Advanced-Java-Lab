@@ -14,7 +14,7 @@ public class InetTest {
 
     public static void main(String[] args) {
         try {
-            InetAddress ip = InetAddress.getByName("http://kashishgrover.com");
+            InetAddress ip = InetAddress.getByName("https://facebook.com");
 
             System.out.println("Host Name: " + ip.getHostName());
             System.out.println("IP Address: " + ip.getHostAddress());

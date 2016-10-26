@@ -13,7 +13,7 @@ import java.net.*;
 public class URLConnectionReader {
 
     public static void main(String[] args) throws Exception {
-        URL oracle = new URL("http://kashishgrover.com/");
+        URL oracle = new URL("https://kashishgrover.com/");
         URLConnection yc = oracle.openConnection();
         try (BufferedReader in = new BufferedReader(new InputStreamReader(
                 yc.getInputStream()))) {
