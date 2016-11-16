@@ -4,9 +4,17 @@
         <servlet-name>ServletClass</servlet-name>
         <servlet-class>ServletClass</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AllEmployeeServlet</servlet-name>
+        <servlet-class>AllEmployeeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletClass</servlet-name>
         <url-pattern>/ServletClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllEmployeeServlet</servlet-name>
+        <url-pattern>/AllEmployeeServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
